@@ -1,0 +1,3688 @@
+Day-1 Class
+-----------
+						     React 19x
+- HTML, CSS, JavaScript, Bootstrap
+
+1. What is React?
+A. React is a JavaScript library used to build UI for web and native applications.
+
+2. Can we build any application using React?
+A. No. It requires frameworks like
+		a) Next.js
+		b) Remix
+		c) Gatsby 
+		d) Expo (Mobile Native Apps)
+
+
+3. What are the languages used for React?
+A. JavaScript, Typescript.
+
+
+4. What is difference between React & Angular?
+A. React is a library.
+    Angular is a framework.
+
+5. Where React is recommended?
+A. If your application in Backend is enabled with lot of frameworks and you want 
+   only a good UI for application, then it is recommended to use React.
+
+6. Where Angular is used?
+A. If application is using limited backend frameworks and they need both front end and backend enabled 
+   with framework to control application flow, then Angular is recommended. 
+
+7. What is difference between React & React JS?
+A. Both are same.  [Modern name is React]
+
+
+8. Why we need technologies like Angular & React?
+A. TO build SPA & PWA
+
+
+9. What are the challenges in modern web development?
+A. 
+	a) Unified UX
+	  	- Application must have same experience across devices.
+		- Mobile users must get access to everything. 
+
+	b) Fluid UX
+		- User stays on one page and gets access to everything from the page.
+		- It is a SPA [Single Page Application].
+
+	c) Loosely Coupled & Extensible 
+		- Allows to build new features outside the scope and integrate into application
+		  without leading to catastrophic failures. 
+
+10. What is the solution?
+A. Better build "SPA" & "Progressive Web Application" [PWA].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Day-2 Class
+-----------
+Summary
+- What is React?
+- Difference between React & Angular
+- Why we need React?
+- What are the challenges in modern web development?
+	Unified UX
+	Fluid UX
+	Loosely Coupled and Extensible 
+- What is solution?
+	SPA
+	PWA
+- Can we build SPA using JavaScript & jQuery?
+   Yes
+
+
+
+
+FAQ: What are the issues with JavaScript & jQuery?
+Ans:
+	- JS & jQuery use lot of DOM manipulations 
+	- They are slow & heavy on application
+	- It requires to use lot of Ajax explicitly.
+
+
+Features of React JS:
+1. React uses Virtual DOM.
+2. It is modular.
+3. It is light weight and faster.
+4. Loosely coupled & extensible 
+5. It is component based.
+6. Easy to reuse and extend. 
+7. It is easy for mantainability  and testability.
+
+Issue with React:
+- Lot of GAP's.
+- Lot of 3rd party library are required
+
+
+FAQ's:
+1. What is DOM?
+A. It is a hierarchy of elements in page.
+    Browser engine presents content in a hierarchical order by using HTML parsing.
+
+2. HTML Parsing
+A.
+Markup=>Bytes => Chars => Tokens => Nodes => DOM => Render => Layout => Paint 
+
+3. Browser Architecture
+	- User Interface
+	- UI Backend
+	- Browser Engine
+	- Rendering Engine
+	- JavaScript Interpreter 
+	- Networking 
+	- Data Persistence 
+
+4. Browser Engines 
+	- V8
+	- Chakra 
+	- Chromium 
+	- Webkit
+	- Gecko
+	- Spider Monkey 
+
+5. What is Shadow DOM?
+A. It is a hierarchy of elements in a component. HTML have various components like
+		<input type="date">
+		<input type="email">
+		<input type="number">
+		<input type="range">  
+		etc..
+
+6. What is Virtual DOM?
+A. It is a copy of DOM in browser memory. 
+    Page updates virtual and reflects output to user. However it is updated into actual 
+    DOM later. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Day-3 Class
+-----------
+Summary
+- Features of React
+	Virtual DOM [DOM, Shadow DOM, Virtual DOM]
+	Modular
+	Loosely Coupled & Extensible 
+	Component Based
+- Issues with React
+Setup Environment for React:
+1. Your PC must have OS windows 8x, Mac, Linux etc.
+
+2. Download and Install "Node JS" on your PC.
+
+		https://nodejs.org/en
+ 
+    - Node JS is required to build servers, web apps, scripts & command line tools.
+    - Node JS provides a package manager called NPM.
+		[ Yarn, Bower, Grunt, Compose, Ruby Gems, NuGet ]
+    
+3. Check the version of Node & NPM from command prompt
+
+	C:\> node  -v
+	C:\> npm   -v
+
+    Note: Make sure that the node version is 18x and higher &
+	      npm version is 8x and higher.
+
+4. Download and Install "Visual Studio Code" editor
+
+	https://code.visualstudio.com/
+
+     - VS code provides an IDE [Integrated Development Environments] for building,
+	debugging, testing and deploying apps. 
+
+5. Add Extensions to VS Code editor
+
+	- Live Server
+	- VS-Code Icons
+	- IntelliSense for CSS class names in HTML
+
+Create a new Web Application:
+1. Create a new folder for your project
+
+		D:\web-app
+
+2. Open your project folder in VS Code
+
+3. Setup the file system for Web Application
+
+	a) Generate package.json
+	     - Open Terminal & run the command
+	
+			> npm init  -y
+	
+	     - package.json comprises of project meta data.
+	
+	b) Add "README.md"  into project
+
+	    - It is a help document designed by developers for developers.
+
+	c) Add  ".gitignore", It is required for publishing on GIT and ignoring specific set
+	    of resources.
+
+	d) Add folders
+			- public		: It comprises of static resources [html, images, docs..]
+			- src			: It comprises of dynamic resources [.css, .js, .ts, .scss..]
+
+	e) Add following pages into public folder
+	
+			- index.html
+			- home.html
+
+
+Setup React for your web application:
+
+1. Setup library using CDN for legacy React [up to 17x]
+
+     - React in page requires following libraries 
+		a) React			[Core Library]
+		b) React DOM		[Virtual DOM Library]
+		c) Babel			[Compiler]
+
+     - React libraries you can get from  "https://legacy.reactjs.org/"
+
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+	- Babel library you can get from  "https://babeljs.io/"
+
+		https://babeljs.io/docs/babel-standalone
+
+	- Copy the babel @standalone library
+
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+index.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+</head>
+<body>
+    <h2>Index Page</h2>
+    React is in <a href="./home.html">Home</a> page.
+</body>
+</html>
+
+
+home.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        ReactDOM.render("Welcome to React", document.getElementById("root"));
+    </script>
+</head>
+<body>
+    <h2>Home</h2>
+    <noscript>Please enable JavaScript on your browser.</noscript>
+    <div id="root"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Day-4 Class
+------------
+How to use react in existing web application?
+1. Install Node JS
+2. VS Code
+3. Create a project
+4. Setup file system for project
+5. Enable React in page using CDN	
+		a) React
+		b) React DOM
+		c) Babel 
+
+Install react & babel library for project:
+
+1. Run the following commands in your project terminal 
+
+		>npm  i  react   react-dom   @babel/standalone  --save	[ latest - 19]
+
+		>npm  i  react@18.2  react-dom@18.2  @babel/standalone --save
+
+2. All library files are copied into "node_modules".
+
+3. You web application requires react libraries from "UMD" [Universal Module Distribution] system.
+
+4. Link library files to your HTML page.
+
+<head>
+<script  src="../node_modules/react/umd/react.development.js"> </script>
+<script src="../node_modules/react-dom/umd/react-dom.development.js"> </script>
+<script src="../node_modules/@babel/standalone/babel.js"> </script>
+</head>
+
+Ex:
+home.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script src="../node_modules/react/umd/react.development.js"></script>
+    <script src="../node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="../node_modules/@babel/standalone/babel.js"></script>
+    <script type="text/babel">
+        ReactDOM.render("Welcome to React", document.getElementById("root"));
+    </script>
+</head>
+<body>
+    <h2>Home</h2>
+    <noscript>Please enable JavaScript on your browser.</noscript>
+    <div id="root"></div>
+</body>
+</html>
+
+FAQ: What is "ReactDOM" ?
+Ans:  It is a property that creates "Virtual DOM" and  "render()" is a method that renders 
+	 virtual DOM into actual DOM.
+
+Syntax:
+	 ReactDOM.render( <your_component>,  dom_target_element );
+
+
+					       React Components
+- Component is a template with pre-defined design, styles and functionality.
+- Design is created using "HTML".
+- Styles are configured using "CSS".
+- Functionality is defined by using "JavaScript / TypeScript".
+- React uses JavaScript Extension known as "JSX".
+- React component can be created by using 2 techniques
+	a) JavaScript Class
+	b) JavaScript Function 
+
+JavaScript Function Topics:
+- Function Declaration
+- Function Expression
+- Function Definition 
+- Function Parameters
+- Rest Parameters
+- Spread Operator
+- Function Closure 
+- Function Return 
+- Function Currying 
+- Higher Order Functions 
+- Function Recursion
+- Function Signature 
+- Function Generator
+- Function Call back
+- Function Promise 
+- Async Functions
+- Anonymous Functions 
+- IIFE Pattern
+- Arrow Functions
+
+Function Component Rules:
+1. A component function can't be void.
+2. A component function must return JSX element. 
+3. Component function name must start with Uppercase letter. 
+4. Component JSX must return only one fragment. 
+5. Every element in component must have an end token.
+		<img> </img>
+		<img />
+		<input type="text">  </input>
+		<input type="text" />
+
+Syntax:
+	 function   Component()
+	 {
+	   return (
+			<fragment>
+
+			</fragment>
+		      );
+	 }
+
+- Component is accessed and used as a token  "<Component />".
+
+Ex:
+home.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        form {
+            border: 1px solid gray;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 2px black;
+            width: 200px;
+            margin: 20px;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid gray;
+            padding: 20px;
+        }
+        footer {
+            background-color: black;
+            color:white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+    <script src="../node_modules/react/umd/react.development.js"></script>
+    <script src="../node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="../node_modules/@babel/standalone/babel.js"></script>
+    <script type="text/babel">
+        
+        function Login()
+        {
+            return (
+                <form>
+                    <h3>User Login</h3>
+                    <dl>
+                        <dt>User Name</dt> 
+                        <dd><input type="text" /></dd>
+                        <dt>Password </dt> 
+                        <dd><input type="password"/> </dd> 
+                    </dl>
+                    <button>Login</button>
+                </form>
+            );
+        }
+
+        const SearchBar = ()=> (
+            <div>
+                <input type="text" placeholder="Search Netflix.in" />
+                <button>Search</button>
+            </div>
+        )
+
+        const Navbar = () => (
+            <nav>
+                <div>Netflix</div>
+                <div>
+                    <SearchBar />
+                </div>
+                <div> 
+                  <select>
+                    <option>Language</option>
+                    <option>English</option>
+                  </select>    
+                  <button>Sign In</button>
+                </div>
+            </nav>
+        )
+
+        function Footer()
+        {
+            return(
+                <footer>
+                    &copy; 2025  All right reserved for Netflix
+                </footer>
+            )
+        }
+
+        ReactDOM.render(<section> <Navbar/> <Login/>  <Footer /> </section>, document.getElementById("root"));
+    </script>
+</head>
+<body>
+    <noscript>Please enable JavaScript on your browser.</noscript>
+    <div id="root"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Day-5 Class
+-----------
+Note: JSX elements can't use attributes. You have to configure properties.	
+			
+			<img  src=""  width=""  height="" class="img-fluid">       attributes
+
+			document.querySelector("img").src="";		property
+			document.querySelector("img").className=""
+
+Syntax:
+		<img  src=""  className=""  />
+
+
+	   All JSX elements from HTML must be in lowercase. 
+
+		 <form> <button> <select>		valid
+		 <Form> <Button> <Select>		Invalid
+
+Setup Bootstrap for project:
+1. Open Terminal 
+2. Run the following command in project terminal
+
+		> npm  install  bootstrap  bootstrap-icons  --save
+
+3. Link the bootstrap files to your web page.
+
+<head>
+ <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+ <link rel="stylesheet" href="../node_modules/bootstrap/dis/css/bootstrap.css">
+ <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js">
+</head>
+
+
+
+
+Ex: Netflix.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <style>
+        .bg-image {
+            background-image: url("netflix-banner.jpg");
+            height: 100vh;
+            background-size: cover;
+        }
+        .bg-shade {
+            background-color: rgba(0,0,0,0.7);
+            height: 100vh;
+        }
+        .brand-title {
+            font-size: 35px;
+            font-weight: bold;
+            color:red;
+        }
+        main {
+            padding-top: 100px;
+            font-family: Arial;
+        }
+        .main-title {
+            font-size: 45px;
+            font-weight: bold;
+        }
+        .main-subtitle {
+            font-size: 22px;
+        }
+    </style>
+    <!-- Bootstrap Library -->
+    <link  rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link  rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <!-- React Library -->
+    <script src="../node_modules/react/umd/react.development.js"></script>
+    <script src="../node_modules/react-dom/umd/react-dom.development.js"></script>
+    <!-- Compiler Library -->
+    <script src="../node_modules/@babel/standalone/babel.js"></script>
+    <!-- React Application Library -->
+    <script type="text/babel">
+        function NetflixIndex(){
+            return(
+                <div className="bg-image">
+                    <div className="bg-shade">
+                        <NetflixHeader />
+                        <NetflixMain />
+                    </div>
+                </div>
+            )
+        }
+        function NetflixHeader(){
+            return(
+                <header className="p-4 text-white d-flex justify-content-between">
+                    <div className="brand-title"> NETFLIX </div>
+                    <div className="d-flex">
+                        <div>
+                            <div className="input-group">
+                            <span className="bi bi-translate input-group-text"></span>
+                            <select className="form-select">
+                                <option>Language</option>
+                                <option>English</option>
+                            </select>
+                        </div>
+                        </div>
+                        <div>
+                            <button data-bs-target="#signin" data-bs-toggle="modal" className="btn btn-danger ms-2">Sign In</button>
+                            <div className="modal fade" id="signin">
+                                <div className="modal-dialog modal-dialog-centered">
+                                    <div className="modal-content">
+                                        <div className="modal-header">
+                                            <h3 className="bi bi-person-fill text-danger">User Login </h3> 
+                                            <button data-bs-dismiss="modal" className="btn btn-close"></button>
+                                        </div>
+                                        <div className="modal-body text-dark">
+                                            <dl> 
+                                                <dt>User Name </dt> 
+                                                <dd><input type="text" className="form-control"/> </dd>
+                                                <dt> Password </dt> 
+                                                <dd><input type="password" className="form-control"/> </dd>
+                                            </dl> 
+                                        </div>
+                                        <div className="modal-footer">
+                                            <button className="btn btn-danger w-100">Login </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            )
+        }
+        function NetflixMain(){
+            return(
+                <main className="text-white text-center">
+                    <div className="main-title">Unlimited movies, TV <br /> shows and more</div>
+                    <div className="main-subtitle">Starts at ₹149. Cancel at any time.</div>
+                    <NetflixRegister />
+                </main>
+            )
+        }
+        function NetflixRegister(){
+            return(
+                <form className="d-flex justify-content-center mt-4">
+                    <div>
+                        <p>Ready to watch? Enter your email to create or restart your membership.</p>
+                     <div>
+                        <div className="input-group input-group-lg">
+                        <input className="form-control" type="email" placeholder="Email address" />
+                        <button className="btn btn-danger"> Get Started <span className="bi bi-chevron-right"></span> </button>
+                        </div>
+                      </div>
+                    </div>
+                </form>
+            )
+        }
+
+        ReactDOM.render(<NetflixIndex />, document.getElementById("root"));
+
+    </script>
+</head>
+<body>
+    <noscript> Please enable JavaScript on your browser </noscript>
+    <div id="root"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Day-6 Class
+-----------
+React Application:
+- You can create react application without any framework. It requires any bundling tool like "Webpack, parcel, vite etc.
+- You can create production grade react application using any framework like 
+	a) Next.js
+	b) Remix
+	c) Gatsby 
+	d) Expo etc.
+
+Creating a React application without framework: [ using Webpack bundler ]
+
+1. Go to any physical location on your PC using command prompt 
+
+		D:\> npm config set legacy-peer-deps true
+
+ 
+2. Create a new application using the command
+
+		D:\> npx   create-react-app    your_app_name
+
+		D:\> npx   create-react-app    demo-react-app
+
+3. Open project folder in VS code   "D:\demo-react-app"
+
+
+4. Project file system comprises of following files & folders
+
+
+	node_modules			: It contains all library files installed using NPM.
+	public					: It contains static resources like html, image, docs etc
+	src						: It contains dynamic resources like js, jsx, ts, css etc.
+	.gitignore					: It configures folder & file to ignore for GIT.
+	package.json				: It comprises of project meta data.
+	package.lock.json			: It comprises of dependencies meta data.
+	README.md				: It is a help document for developers.
+
+5. Open Terminal in your project and install  JavaScript Validation module.
+
+	 >npm  install  ajv  --save
+
+6. Start project using the command
+
+	> npm start
+
+	- You project starts on local server at 3000 port
+	- Open any browser and request
+
+			http://127.0.0.1:3000
+				     (or)
+			http://localhost:3000
+
+
+React Application Flow [High Level Design]:
+
+1. React application starts with "index.html" defined in "public" folder
+
+		<div id="root"> </div>
+
+2. The logic for index page is defined in "src/index.js". It creates virtual DOM and renders into actual DOM.
+
+    Version 18x & 19x:
+
+		const  root = ReactDOM.createRoot(document.getElementById("root");
+		root.render(
+				<App />
+				 );
+
+     Version up to 17x:
+	
+		ReactDOM.render(<App />, document.getElementById("root"));
+
+FAQ: What is <React.StrictMode> ?
+Ans:  Strict Mode is used in JavaScript application to avoid code inconsistency.
+
+Adding a new component in to project:
+
+1. Add a new file into "src" folder with extension  ".jsx  or  .js"
+
+				login.jsx
+
+
+
+export function Login()
+{
+    return(
+        <div>
+            <h3>User Login</h3>
+            <dl>
+                <dt>User Name</dt>
+                <dd><input type="text" /></dd>
+                <dt>Password</dt>
+                <dd><input type="password" /></dd>
+            </dl>
+            <button>Login</button>
+        </div>
+    )
+}
+
+2. Go to "index.js"
+
+	import   { Login }  from   './login';
+
+	render(
+		 <Login />
+	 )
+
+Data Binding & State 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Day-7 Class
+-----------
+Component in React Application
+1. Every component in react application comprises of 3 files
+		a) JSX
+		b) CSS
+		c) test.js
+
+2. ".jsx" is for designing the markup [presentation]. It also contains the application logic.
+3. ".css" comprises of styles.
+4. "test.js" or "spec.js" comprises of test cases, which are used to test the component functions and UI.
+
+					login.jsx
+					login.css
+					login.test.js
+
+5. CSS files are linked to components by using "import" statement. 
+
+					login.jsx
+
+	           import   './login.css';
+
+Note: Always use class & id selectors for styles in component. 
+	  Type selector applies effects to all elements across all components.
+
+Ex:
+1. Go to src folder and add a new folder by name "components".
+
+2. Add a new folder for "register".
+
+3. Add following files into register folder
+
+		register.jsx
+		register.css
+		register.test.js
+
+Ex: 
+register.jsx
+
+import './register.css';
+
+export function Register()
+{
+    return(
+        <div className="form-container">
+            <form className="form-register">
+                <h3>Register User</h3>
+                <dl>
+                    <dt>User Name</dt>
+                    <dd><input type="text" /></dd>
+                    <dt>Password</dt>
+                    <dd><input type="password" /></dd>
+                    <dt>Email</dt>
+                    <dd><input type="email" /></dd>
+                    <dt>Mobile</dt>
+                    <dd><input type="text" /></dd>
+                </dl>
+                <button>Register</button>
+            </form>
+        </div>
+    )
+}
+
+register.css
+
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.form-register {
+    border:1px solid gray;
+    padding: 20px;
+    box-shadow: 2px 2px 2px black;
+}
+
+Enable bootstrap for React application:
+1. Install bootstrap from terminal
+
+		> npm  install  bootstrap   bootstrap-icons --save
+
+2. Go to "index.js" in src folder
+
+  import  '../node_modReactDOMules/bootstrap-icons/font/bootstrap-icons.css';
+  import  '../node_modules/bootstrap/dist/css/bootstrap.css';
+  import  bootstrap  from 'bootstrap';				// optional
+
+3. register.jsx
+
+
+
+export function Register()
+{
+    return(
+        <div className="d-flex justify-content-center align-items-center">
+            <form className="mt-4 w-25 p-4 alert alert-warning alert-dismissible border border-secondary rounded rounded-2">
+                <h3 className="bi bi-person-fill"> Register User</h3>
+                <button className="btn btn-close"></button>
+                <dl>
+                    <dt>User Name</dt>
+                    <dd><input type="text" className="form-control" /></dd>
+                    <dt>Password</dt>
+                    <dd><input type="password" className="form-control"  /></dd>
+                    <dt>Email</dt>
+                    <dd><input type="email" className="form-control"  /></dd>
+                    <dt>Mobile</dt>
+                    <dd><input type="text" className="form-control"  /></dd>
+                </dl>
+                <button className="btn btn-warning w-100">Register</button>
+            </form>
+        </div>
+    )
+}
+
+						  Data Binding
+- Data binding is the process of accessing data from source and binding to UI elements.
+- Data binding is classified into 2 types
+	a) One Way Binding
+	b) Two Way Binding
+
+- React supports "One way binding".
+- One way is secured and will not allow accidental changes in data from UI.
+- However you can implement "Two way binding" using explicit techniques. 
+- React uses a data binding expression "{  }".
+
+Syntax:
+		var  uname = "John";
+
+		<p> Hello !  { uname } </p>
+		
+		<input type="text"  value={uname} />
+
+Note: Don't use variable for storing data in a component. Variables are immutable. 
+	  It is always recommend to store data using "state" in component. 
+
+FAQ: What is state? Why we need state?
+Ans:
+	- Web applications use "http" as protocol.
+	- "http" is a stateless protocol.
+	- It can't remember data between pages. 
+	- It requires various state management techniques both client side & server side.
+
+React Component State:
+- Component are state less.
+- You have to configure state explicitly by using React hooks
+		a) useState
+		b) useContext
+		c) userReducer 
+		d) useMemo
+		e) useCallBack
+		f)  useRef
+
+useState  hook:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Day-8 Class
+-----------
+						    useState Hook
+- Hook is a function.
+- It is a predefined function provided by React library.
+- useState can configure a local state for component.
+- You can store any value in local state and use across requests. 
+
+Syntax:
+	     const [getter, setter] = useState();
+
+- Getter allows to read value from state.
+- Setter allows to assign value into state. 
+
+Ex:
+	  const [userName  , setUserName] = useState( "John" );
+
+	  <p>  {  userName   }  </p>
+
+	  setUserName("David");		// initializing memory
+	  setUserName = "David";		// assigning  - invalid 
+
+- State can handle any type of data.
+		
+		a) Primitive 
+		b) Non Primitive 
+
+- JavaScript Primitive Types
+
+		- number
+		- string
+		- Boolean
+		- undefined
+		- null
+		- symbol 
+		- bigint 
+
+FAQ's:
+1. Can we declare state with var or let keywords?
+A. Yes. But not recommended. 
+
+2. Why state is configured with "const"?
+A. State must be initialized for react component. The keywords var & let allows assignment. State can't be assigned it must be initialized. 
+
+3. If you declare state using const then how you can assign a new value?
+A. Const will not allow to assign, however we can change the constant by initializing memory for value.
+
+Syntax:
+			setter = value;			// invalid - const will not allow to assign
+			setter(value);			// valid - const initializes memory
+
+Binding Number Type:
+- Number type can be any one of the following
+		
+		Signed Integer		- 10
+		Unsigned Integer		   10
+		Floating Point			   3.5
+		Double				345.423
+		Decimal				2345.554592
+		Exponent				2e3
+		Hexadecimal 			0x3314
+		Octa					0o753
+		Binary				0b1010
+		Bigint 				994288182n
+
+- The formatting methods of JavaScript are same in React 
+			
+		toFixed()
+		toLocaleString()
+
+Syntax:
+	     const [value] = useState(450000.00);
+
+		{  value.toFixed(2)  }		
+		{  value.toLocaleString() }			450,000
+		{  value.toLocaleString('en-in') }		4,50,000
+		{  value.toLocaleString('en-in', { style: 'currency', currency: 'INR' })
+
+https://www.instagram.com/sharmatechgroup/
+
+Ex: 
+data-binding.jsx
+
+import { useState } from "react"
+
+export  function DataBinding()
+{
+
+    const [value] = useState(450000.00);
+
+    return(
+        <div className="container-fluid">
+            <h2>Data Binding</h2>
+            <p> value = {value.toLocaleString('en-in',{style:'currency', currency:'INR'})} </p>
+        </div>
+    )
+}
+
+- You can convert a numeric string into number by using following methods
+
+		a) parseInt()
+		b) parseFloat()
+
+- You can verify number type by using "isNaN()" [boolean] 
+
+Note: JSX will not allow any statements in Markup. You have to handle only with
+	 operators and functions. 
+
+Syntax:
+		<p>
+			{
+				if(condition) { } 		// invalid
+
+			}
+		</p>
+
+		<p>
+			{
+			  (condition)?true:false		// valid
+			}
+		</p>
+
+Ex:
+data-binding.jsx
+
+import { useState } from "react"
+
+export  function DataBinding()
+{
+
+    const [age] = useState("A");
+
+    return(
+        <div className="container-fluid">
+            <h2>Data Binding</h2>
+            <p>
+                {
+                    (isNaN(age))?'Age must be a number':age
+                }
+            </p>
+        </div>
+    )
+}
+
+
+
+
+
+
+
+
+
+Binding String Type:
+- JS string can be defined using 3 techniques
+
+	a) Double Quote		"  "
+	b) Single Quote		'   '
+	c) Backtick 			`  `
+
+- Backtick allows embedded expression.
+- Databinding expression of JavaScript string is "${ }".
+
+Syntax:
+	   const [str] = useState('text-danger');
+
+	  <h2  className={`border border-1 p-2 ${str}`}>
+
+Ex:
+data-binding.jsx
+
+import { useState } from "react"
+
+export  function DataBinding()
+{
+
+    const [validationClass] = useState('text-success')
+
+    return(
+        <div className="container-fluid">
+            <h2 className={`border border-2 text-center mt-2 p-2 ${validationClass}`}>Data Binding</h2>
+            
+        </div>
+    )
+}
+
+- All string formatting and manipulation methods are same as in JavaScript.
+
+		bold()
+		italics()
+		fontsize()
+		toUpperCase()
+		toLowerCase()
+		fontcolor() etc..
+
+		charAt(), charCodeAt()
+		indexOf(), lastIndexOf(),
+		substr(), slice(), substring()
+		replace(), replaceAll(), match()
+		trim(), split() etc..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Day-9 Class
+-----------
+Binding Boolean Types
+- Boolean type are defined with true or false.
+- React will not recommend to use Boolean with 0 & 1.
+		0 = false
+		1 = true
+- React can't show the Boolean value, it can just use the value.
+
+Syntax:
+	const  [stock] = useState(true);
+
+	<p>  {  (stock==true)?"true":"false" } </p>
+
+Undefined Type:
+- React will not display undefined value but it can use the type.
+- You can verify by using "undefined" or by using defined technique. 
+
+Syntax:
+	 const  [price] = useState();
+
+	 <p>  { (price) ? price : "not defined" } </p>				// good
+
+	<p>  { (price===undefined)? "not defined" : price } </p>      // not good
+
+Null Type 
+- Null is a type defined for values at runtime of application.
+- It is verified by using "null" keyword.
+
+Syntax:
+	const [ price ]  = useState(prompt('enter price'));
+
+	<p>  {  (price===null) ? "Not defined" : price }  </p>
+
+Note: Remove "<React.Strictmode>" from index.js to avoid compiling 2 times.
+	  [for development and production]
+
+Symbol Type:
+- It is a primitive JavaScript type.
+- It is used to configure hidden properties. 
+- Hidden property is not displayed over iterations, but accessible individually. 
+
+Syntax:
+	var [id] = Symbol();
+
+	var product = {
+	     [id] : 1,
+	     Name: "TV"
+	 }
+
+					     Non Primitive Types
+- They are mutable types
+- They are stored in memory heap
+- They don't have any fixed range for value.
+- Value range varies according to memory available.
+- JavaScript non-primitive types
+	a) Array
+	b) Object
+	c) Map / WeakMap
+
+Arrays in React:
+- Array configuration is same as in JavaScript.
+- All array methods are used similarly in React.
+	pop()    	    :remove last value	
+	push()		    :add new value into last
+	shift()         :remove first value
+	unshift()       :add the first value
+	forEach()       :reading value from array sync
+	map()           :reading value form array asyncc
+	find()          :find and return single value firnst
+	filter()        :filter reutrn mathcing conidiotn value all 
+	slice()         :startIndex and End Index
+    indexOf()       :
+    lastIndexOf() etc..
+
+Syntax:
+	  const  [values] = useState([ ]);
+	  const  [values] = useState(new Array());
+
+	  values.map(function(value) { })		// not recommended 
+
+	  values.map(value => <element> </element>)
+	
+	  values.map(value => { <element> </element> })	// invalid
+
+Ex:
+data-binding.jsx
+
+import { useState } from "react"
+
+export  function DataBinding()
+{
+   
+    var [categories] = useState(['All','Electronics', 'Footwear', 'Fashion']);
+
+    return(
+        <div className="container-fluid">
+           <h3>Categories</h3>
+           <nav className="bg-danger btn-group">
+              {
+                categories.map(category=><button className="btn btn-danger">{category}</button>)
+              }
+           </nav>
+           <ol>
+             {
+                categories.map(category=> <li>{category}</li>)
+             }
+           </ol>
+           <select>
+              {
+                 categories.map(category=> <option>{category}</option> )
+              }
+           </select>
+           
+        </div>
+    )
+}
+
+Note: If any element is repeating in JSX, then every repeating element must have a unique key.
+
+Syntax:
+		{
+		  categories.map((category,index)=> <li key={index}> {category} </li>
+		}
+
+		{
+		  categories.map( category => <option key={category}> {category} </option>
+		}
+
+Ex:
+data-binding.jsx
+
+import { useState } from "react"
+
+export  function DataBinding()
+{
+   
+    var [categories] = useState(['All','Electronics', 'Footwear', 'Fashion']);
+
+    return(
+        <div className="container-fluid">
+           <h3>Categories</h3>
+           <nav className="bg-danger btn-group">
+              {
+                categories.map((category,index)=><button key={index} className="btn btn-danger">{category}</button>)
+              }
+           </nav>
+           <ol>
+             {
+                categories.map(category=> <li key={category}>{category}</li>)
+             }
+           </ol>
+           <select>
+              {
+                 categories.map(category=> <option key={category}>{category}</option> )
+              }
+           </select>
+           
+        </div>
+    )
+}
+
+
+Ex:
+import { useState } from "react"
+
+export  function DataBinding()
+{
+   
+    const [sales] = useState([45000, 68000, 32000, 78000, 35000]);
+
+    return(
+        <div className="container-fluid">
+            <h3>Sales above 40k</h3>
+            <ol>
+                {
+                    sales.filter(value=> value>40000).map(item=> <li key={item}>{item}</li>).reverse().sort()
+                }
+            </ol>
+        </div>
+    )
+}
+
+
+
+Object Type [JSON]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Day-10 Class
+-------------
+React Application
+Components
+Data Binding
+- One Way Binding
+- How to binding different data types?
+- useState()
+
+Set State:
+- State is configured while creating component. 
+- You can't set a new value into state while creating component.
+- You can only initialized a value.
+- Every component have a mount phase. [load phase]
+- You can initialize new values or set new values into state while mounting component.
+- Component mount phase is defined using "useEffect()" hook.
+
+Syntax:
+		useEffect(()=>{
+
+	
+		},[ dependencies ])
+
+- Dependencies specify when to load the component again. 
+
+Ex:
+data-binding.jsx
+
+import { useState, useEffect } from "react";
+import moment from "moment";
+
+export  function DataBIt is also communication between two different objects of 
+      two different applicaiton running inding()
+{
+    
+    const [productName, setProductName] = useState('TV');
+    const [price, setPrice] = useState(0);
+    
+    useEffect(()=>{
+
+        setProductName('Samsung TV');
+        setPrice(5000.44);
+
+    },[])
+
+    
+
+    return(
+        <div className="container-fluid">
+           <p>
+              Product Name : {productName} <br />
+              Price : {price}
+           </p>
+        </div>
+    )
+}
+						     Working with API's 
+
+FAQ: What is distributed computing?
+Ans:   Distributed computing allows communication between two applications running 	  
+	  on two different machines.
+
+	  It also allows communication between two different objects of two different 	 
+	  applications running in different process of same machine.
+
+FAQ: What are the various distributed computing technologies?
+Ans:
+		CORBA	[Common Object Request Broken Architecture]   14 languages 
+		DCOM	[Distribute Component Object Model]   - Visual Basic 
+		RMI		[Remote Method Invocation]  - J2EE
+		EJB		[Enterprise Java Beans]		- Java
+		Webservice   						- all technologies 
+		Remoting							- .NET 
+
+Note: The most popular distributed computing technology used across all languages is
+	 Webservice. However it have issues for modern web, hence the alternative is API.
+
+FAQ: What is API?
+Ans:  - Application Programming Interface
+	 - It handles communication between applications in distributed architecture. 
+	 - It can run on any protocol.
+	 - It can run on any server.
+	 - It uses XML & JSON communication.
+
+Ex:
+1. Add a new file into public folder 
+		"products.json"
+[
+    {
+        "Name": "Samsung TV",
+        "Price": 45000.44
+    },
+    {
+        "Name": "Mobile",
+        "Price": 12000.43
+    }, 
+    {
+        "Name":"Watch",
+        "Price": 5000.55
+    }
+]
+
+2. Data-binding.jsx
+
+import { useEffect, useState } from "react";
+
+export function DataBinding() {
+    const [products,setProduct] = useState([]);
+
+    function LoadData(){
+        var http = new XMLHttpRequest();
+        http.open("get","product.json",true);
+        http.send();
+        http.onreadystatechange = function(){
+            if(http.readyState===4){
+             setProduct(JSON.parse(http.responseText))
+            }
+        }
+    }
+
+    useEffect(()=>{
+        LoadData();
+    },[])
+
+
+    return (
+        <div>
+          <table className="table table-hover table-striped border w-25">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                {products.map(itme=>
+                    <tr>
+                        <td>{itme.Name}</td>
+                        <td>{itme.Price}</td>
+                    </tr>
+                )}
+            </tbody>
+          </table>
+        </div>
+    );
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Day-11 Class
+------------
+JavaScript AJAX Techniques
+- Asynchronous JavaScript and XML.
+- It enables "Partial Post Back".
+- It allows to add new content into page without reloading the page.
+- Browser handle AJAX by using "XMLHttpRequest" object.
+
+Communication Specification in Service:
+1. SOAP
+2. REST
+3. JSON
+
+SOAP
+- Service Oriented Architecture Protocol
+- Service consumer sends an XML request.
+
+      <Products>
+         <Product>
+         <Category> Electronics </Category>
+         </Product>
+     </Products>
+
+- Service Provider sends an XML response.
+
+     <Products>
+        <Product>
+            <ProductId> 1 </ProductId>
+            <Name> Mobile </Name>
+            <Category> Electronics </Category>
+        </Product>
+        ....
+        ....
+    </Products>
+
+REST:
+- Representational State Transfer
+- Service consumer sends a simple query request.
+
+    https://sever.com/products?category=electronics
+
+- Service provider sends response in XML or JSON format.
+
+     [
+        {
+        ProductId: 1,
+        Name: "Mobile",
+        Category: "Electronics"
+        },
+        ...
+        ...
+    ]
+
+JSON:
+- JavaScript Object Notation
+- Service consumer sends an JSON request.
+   
+        {
+          Category: "Electronics"
+        }
+
+- Service provider sends an JSON response.
+
+        [
+          {   },
+          {   }
+        ]
+
+XMLHttpRequest:
+- It is a browser window object member.
+- It is the native Ajax method used by browser.
+- It "Sync" by default.
+- You have to explicitly make it "Async".
+- It returns response in XML, HTML or Text.
+- It requires explicit conversion methods to convert data into JSON.
+- It is not good in error handling.
+
+1. Create a new XMLHttpRequest object
+
+     var http = new XMLHttpRequest();
+
+2. Configure the request by using "open()" method
+
+    http.open("method-type", "url", async:boolean);
+
+    method-type        : GET, POST
+    Url                : API URL
+    async            : true / false
+
+3. Send the request into process
+
+    http.send();
+
+4. Execute the request in process by using "onreadystatechange" event.
+
+
+    http.onreadystatechange = function()  {
+
+    }
+
+5. Get response on ready state.
+
+     if (http.readyState===4)
+    {
+
+    }
+
+
+6. Response is returned by using following techniques
+
+        http.responseText
+        http.responseHTML
+        http.responseXML
+
+7. If your data is in JSON format then convert data by using "JSON.parse()".
+
+
+
+
+Ex:
+1. public/product.json
+
+{
+    "title": "Apple iPhone 16 (Green, 256 GB)",
+    "price": 79999,
+    "rating": {
+        "rate": 4.5,
+        "ratings": 15329,
+        "reviews": 3225
+    },
+    "offers": [
+        "Bank Offer5% Unlimited Cashback on Flipkart Axis Bank Credit CardT&C",
+
+        "Bank Offer10% off up to ₹750 on Canara Bank Credit and Credit EMI Transactions, on orders of ₹5,000 and aboveT&C",
+
+        "Bank Offer10% off up to ₹750 on DBS Bank Debit Card Transactions, on orders of ₹5,000 and aboveT&C",
+
+        "Special PriceGet extra ₹9901 off (price inclusive of cashback/coupon)T&C"
+    ],
+    "image": "iphone-green.jpg"
+}
+
+
+2. src/component/flipkart-mobile
+
+        flipkart-mobile.jsx
+
+import { useEffect, useState } from "react"
+
+
+export function FlipkartMobile()
+{
+
+    const [product, setProduct] = useState({title:'', price:0, rating:{rate:0, ratings:0, reviews:0}, offers:[], image:''});
+
+
+    function LoadProduct(){
+
+         var http = new XMLHttpRequest();
+
+         http.open("get", "product.json", true);
+
+         http.send();
+
+         http.onreadystatechange = function(){
+
+              if(http.readyState===4){
+                   setProduct(JSON.parse(http.responseText));
+              }
+
+         }
+
+    }
+
+    useEffect(()=>{
+
+        LoadProduct();
+
+    },[])
+
+
+    return(
+        <div className="container-fluid">
+            <div className="row mt-4">
+                <div className="col-3">
+                    <img src={product.image} width="100%" />
+                </div>
+                <div className="col-9">
+                    <div className="h4 my-2">{product.title}</div>
+                    <div>
+                        <span className="badge bg-success text-white">{product.rating.rate} <span className="bi bi-star-fill"></span> </span>
+                        <span className="text-secondary fw-bold"> {product.rating.ratings.toLocaleString()} ratings & {product.rating.reviews} reviews </span>
+                    </div>
+                    <div className="my-3">
+                        <div className="fs-2 fw-bold"> &#8377; {product.price.toLocaleString('en-in')}</div>
+                    </div>
+                    <div>
+                        <h5>Available Offers</h5>
+                        <ul className="list-unstyled">
+                            {
+                                product.offers.map(offer=><li className="bi bi-tag-fill my-3 text-success" key={offer}> <span className="text-secondary">{offer}</span> </li>)
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+JavaScript "fetch()" API:
+- Fetch is a promise of JavaScript.
+- It is async by default.
+- It is good in error handling.
+- It provides simplified approach for AJAX.
+
+Syntax:
+    fetch("url")
+    .then(function(response){
+        // response is in binary
+        // convert response into JSON
+    })
+    .then(function(data){
+
+    })
+    .catch(function(error){
+
+    })
+    .finally(function(){
+
+    })
+
+- It returns data in binary.
+- Explicit conversion is required.
+- It have CORS issues.
+- It have security issues. [XSRF, XSS]
+
+Ex: Fetch
+
+import { useEffect, useState } from "react"
+
+
+export function FlipkartMobile()
+{
+
+    const [product, setProduct] = useState({title:'', price:0, rating:{rate:0, ratings:0, reviews:0}, offers:[], image:''});
+
+
+    function LoadProduct(){
+
+          fetch("product.json")
+          .then(response=> response.json())
+          .then(product=> {
+              setProduct(product);
+          })
+
+    }
+
+    useEffect(()=>{
+
+        LoadProduct();
+
+    },[])
+
+
+    return(
+        <div className="container-fluid">
+            <div className="row mt-4">
+                <div className="col-3">
+                    <img src={product.image} width="100%" />
+                </div>
+                <div className="col-9">
+                    <div className="h4 my-2">{product.title}</div>
+                    <div>
+                        <span className="badge bg-success text-white">{product.rating.rate} <span className="bi bi-star-fill"></span> </span>
+                        <span className="text-secondary fw-bold"> {product.rating.ratings.toLocaleString()} ratings & {product.rating.reviews} reviews </span>
+                    </div>
+                    <div className="my-3">
+                        <div className="fs-2 fw-bold"> &#8377; {product.price.toLocaleString('en-in')}</div>
+                    </div>
+                    <div>
+                        <h5>Available Offers</h5>
+                        <ul className="list-unstyled">
+                            {
+                                product.offers.map(offer=><li className="bi bi-tag-fill my-3 text-success" key={offer}> <span className="text-secondary">{offer}</span> </li>)
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Day-12 Video
+------------
+JavaScript Ajax Methods
+- XMLHttpRequest
+- Fetch Promise
+
+FAQ: What are the issues with "fetch()"?
+Ans:
+      - It returns data in binary format.
+      - You have to parse the data explicitly.
+      - CORS issues [Cross Origin Resource Sharing]
+      - It allows only GET.
+      - It not good handling XSRF & XSS.
+        [ Cross Site Request Forgery & Cross Site Scripting Attacks ]
+
+
+                        jQuery Ajax
+- jQuery is a JavaScript library.
+- It provides various Ajax methods to handle Async requests.
+- It returns data directly in the native format of source.
+- It doesn't require explicit parsing of data.
+- It provides various life cycle methods that allow to track the request.
+- It is good in error handling.
+- CORS, XSRF & XSS have issues. [Limited]
+- You can't cancel the requests.
+- jQuery Ajax methods
+    a) getJSON()
+    b) $.ajax()
+
+1. Install jQuery for your project
+
+        >npm install jquery --save
+
+2. jQuery library is accessed in any component using "$" reference.
+
+        import  $  from  "jquery";
+
+3. Create Ajax request
+
+        $.ajax( {
+                method: "get | post | put | delete ..",
+                url: "api_url",
+                data: data_to_submit,
+                success: ()=>{ on success },
+                error: ()=> { on failure }
+              })
+
+4. On Success Ajax returns data in native format. [JSON, XML, Text, HTML..]
+
+5. You can use the response data directly in component.
+
+Ex:
+flipkart-mobile.jsx
+
+import { useEffect, useState } from "react";
+import $ from "jquery";
+
+
+export function FlipkartMobile()
+{
+
+    const [product, setProduct] = useState({title:'', price:0, rating:{rate:0, ratings:0, reviews:0}, offers:[], image:''});
+
+
+    function LoadProduct(){
+
+         $.ajax({
+             method: "get",
+             url: "product.json",
+             success: (product) => {
+                 setProduct(product);
+             }
+         })
+
+    }
+
+    useEffect(()=>{
+
+        LoadProduct();
+
+    },[])
+
+
+    return(
+        <div className="container-fluid">
+            <div className="row mt-4">
+                <div className="col-3">
+                    <img src={product.image} width="100%" />
+                </div>
+                <div className="col-9">
+                    <div className="h4 my-2">{product.title}</div>
+                    <div>
+                        <span className="badge bg-success text-white">{product.rating.rate} <span className="bi bi-star-fill"></span> </span>
+                        <span className="text-secondary fw-bold"> {product.rating.ratings.toLocaleString()} ratings & {product.rating.reviews} reviews </span>
+                    </div>
+                    <div className="my-3">
+                        <div className="fs-2 fw-bold"> &#8377; {product.price.toLocaleString('en-in')}</div>
+                    </div>
+                    <div>
+                        <h5>Available Offers</h5>
+                        <ul className="list-unstyled">
+                            {
+                                product.offers.map(offer=><li className="bi bi-tag-fill my-3 text-success" key={offer}> <span className="text-secondary">{offer}</span> </li>)
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+                        3rd Party Ajax Libraries
+- React can use various 3rd Party libraries to handle Ajax requests.
+- The popular 3rd party for React are
+        a) Axios
+        b) WHATWGFetch
+        c) React Relay
+        d) Redux React Ajax methods etc..
+        e) Telerik
+
+        www.npmjs.com
+
+Axios for Ajax in React:
+- It is promise based.
+- It is async by default.
+- It can handle multiple requests simultaneously at the same time.
+- It is good in error handling.
+- It provides better features to manage CORS, XSRF & XSS.
+- It doesn't require explicit parsing.
+- It is built for React.
+- It uses virtual DOM.
+- It can cancel the requests.
+
+1. Install Axios for project
+
+        > npm  install axios --save
+
+2. Import axios into component
+
+        import  axios  from  "axios";
+
+3. Configure axios request
+
+Syntax:
+        axios.get("url").then(response=>{}).catch(error=>{}).finally(()=>{ })
+
+4. "response" returns various details like
+        a) statusCode            200, 404
+        b) statusText            OK, Not Found
+        c) data                XML, JSON, Text, HTML
+        d) headers            Request & Response details
+
+Ex:
+flipkart-mobile.jsx
+
+import { useEffect, useState } from "react";
+import axios from "axios";
+
+export function FlipkartMobile()
+{
+
+    const [product, setProduct] = useState({title:'', price:0, rating:{rate:0, ratings:0, reviews:0}, offers:[], image:''});
+
+
+    function LoadProduct(){
+
+         axios.get('product.json')
+         .then(response=>{
+             setProduct(response.data);
+         })
+
+    }
+
+    useEffect(()=>{
+
+        LoadProduct();
+
+    },[])
+
+
+    return(
+        <div className="container-fluid">
+            <div className="row mt-4">
+                <div className="col-3">
+                    <img src={product.image} width="100%" />
+                </div>
+                <div className="col-9">
+                    <div className="h4 my-2">{product.title}</div>
+                    <div>
+                        <span className="badge bg-success text-white">{product.rating.rate} <span className="bi bi-star-fill"></span> </span>
+                        <span className="text-secondary fw-bold"> {product.rating.ratings.toLocaleString()} ratings & {product.rating.reviews} reviews </span>
+                    </div>
+                    <div className="my-3">
+                        <div className="fs-2 fw-bold"> &#8377; {product.price.toLocaleString('en-in')}</div>
+                    </div>
+                    <div>
+                        <h5>Available Offers</h5>
+                        <ul className="list-unstyled">
+                            {
+                                product.offers.map(offer=><li className="bi bi-tag-fill my-3 text-success" key={offer}> <span className="text-secondary">{offer}</span> </li>)
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+
+       
+Ex:  api.nasa.gov  
+
+nasa.jsx
+
+import axios from "axios";
+import { useEffect, useState } from "react"
+
+
+export function Nasa(){
+
+    const [marsObject, setMarsObject] = useState({photos:[]});
+
+
+    useEffect(()=>{
+
+        axios.get('https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=DEMO_KEY&#39;)
+        .then(response=>{
+            setMarsObject(response.data);
+        })
+
+    },[])
+
+    return(
+        <div className="container-fluid">
+            <h3>Mars Rover Photos</h3>
+            <table className="table table-hover">
+                <thead>
+                    <tr>
+                        <th className="bi bi-key"> Photo Id</th>
+                        <th className="bi bi-camera"> Camera Name </th>
+                        <th className="bi bi-rocket"> Rover Name </th>
+                        <th className="bi bi-eye"> Preview </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        marsObject.photos.map(item=>
+                            <tr key={item.id}>
+                                <td>{item.id}</td>
+                                <td>{item.camera.full_name}</td>
+                                <td>{item.rover.name}</td>
+                                <td><a href={item.img_src} target="_blank"><img src={item.img_src} width="100" height="100" /></a></td>
+                            </tr>
+                        )
+                    }
+                </tbody>
+            </table>
+        </div>
+    )
+}
+
+
+
+
+Ex: Cards
+
+Nasa.jsx
+
+import axios from "axios";
+import { useEffect, useState } from "react"
+
+
+export function Nasa(){
+
+    const [marsObject, setMarsObject] = useState({photos:[]});
+
+
+    useEffect(()=>{
+
+        axios.get('https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=DEMO_KEY&#39;)
+        .then(response=>{
+            setMarsObject(response.data);
+        })
+
+    },[])
+
+    return(
+        <div className="container-fluid">
+            <h3>Mars Rover Photos</h3>
+            <main className="d-flex flex-wrap">
+                {
+                    marsObject.photos.map(item=>
+                    <div key={item.id} className="card m-3 p-2 w-25">
+                        <img src={item.img_src} className="card-img-top" height="100" />
+                        <div className="card-header">
+                            <div className="h3">{item.id}</div>
+                        </div>
+                        <div className="card-body">
+                                <dl>
+                                    <dt>Camera Name</dt>
+                                    <dd>{item.camera.full_name}</dd>
+                                    <dt>Rover Name</dt>
+                                    <dd>{item.rover.name}</dd>
+                                </dl>
+                        </div>
+                    </div>
+                   )
+                }
+            </main>
+        </div>
+    )
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+React Class-13 
+--------------
+Ajax Techniques
+- XMLHttpRequest
+- fetch()
+- jQuery Ajax
+- axios
+
+                          Two Way Data Binding
+- React key feature is One Way Binding.
+- It allows to bind the data with UI elements.
+- It will not allow changes in data.
+- It is more secured.
+- To enable two-way-binding, it requires explicit actions to configure.
+- Actions are defined by using "Events".
+
+1. What is Event?
+A. Event is a message sent by sender to its subscriber in order to notify the change.
+    Event follows a "Delegate" mechanism, which is a function pointer mechanism.
+    Event uses a software design pattern called "Observer", which is a communication
+    pattern.
+
+2. What is Sender?
+A. Sender is trigger that identifies the changes.
+
+3. What is Subscriber?
+A. It defines the actions to perform when event triggers.
+
+Syntax:
+        function InsertClick() { }        => Subscriber
+
+        onclick="InsertClick()"        => Sender
+
+4. What is Event Handler?
+A. Every element can have an event handler, which defines the trigger and action.
+
+    onclick                    => Event
+    onclick="InsertClick()"        => Event Handler
+
+5. What is Event Listener?
+A. A listener is configured dynamically for elements in page. So that it can trigger
+    a functionality dynamically. [runtime]
+
+Syntax:
+       document.querySelector("button").addEventListener("eventName", function(){
+
+       })
+
+FAQ: What is difference between onclick & click?
+Ans :  onclick is an handler name.
+      click is a listener name.
+
+Syntax:
+      document.getElementById("button").addEventListener("click", ()=>{});
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <script>
+      function InsertClick(){
+         document.write("Inserted..");
+      }
+      function bodyload(){
+         var btn = document.createElement("button");
+         btn.innerHTML = "Update";
+         btn.addEventListener("click",()=>{
+             document.write("Updated..");
+         })
+         document.querySelector("body").appendChild(btn);
+
+         document.getElementById("btnDelete").addEventListener("click",()=>{
+             document.write("Deleted..");
+         })
+
+      }
+   </script>
+</head>
+<body onload="bodyload()">
+   <button id="btnDelete">Delete</button>
+   <button onclick="InsertClick()">Insert</button>
+</body>
+</html>
+
+5. What are Event Arguments?
+A. Every arguments refer to payload.  
+    Payload refers to data carried from one location to another.
+
+6. What are JavaScript Event Arguments?
+A. JavaScript event arguments transport information about element and event.
+     Elements information includes details like:        
+        a) id
+        b) name
+        c) value
+        d) src
+        e) href etc..
+      Event information includes details like:
+        a) clientX
+        b) clientY
+        c) keycode
+        e) charCode
+        f) which etc..
+      JavaScript allows default arguments and custom arguments.
+
+7. What are JavaScript default arguments?
+A. this & event.
+
+        this        : It contains information about element
+        event    : It contains information about event
+
+Ex: this
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <script>
+      function Player(button){
+         switch(button.name){
+             case "Play":
+               document.querySelector("p").innerHTML = "Playing..";
+               break;
+               case "Pause":
+               document.querySelector("p").innerHTML = "Paused..";
+               break;
+               case "Stop":
+               document.querySelector("p").innerHTML = "Stopped..";
+               break;
+         }
+      }
+   </script>
+</head>
+<body>
+   <button onclick="Player(this)" name="Play">Play</button>
+   <button onclick="Player(this)" name="Pause">Pause</button>
+   <button onclick="Player(this)" name="Stop">Stop</button>
+   <p></p>
+</body>
+</html>
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <script>
+      function LinkClick(e, label){
+          if(e.ctrlKey){
+              window.open('https://www.amazon.in','Amazon&#39;);
+          }
+          console.log(label.title);
+      }
+   </script>
+</head>
+<body>
+    <label onclick="LinkClick(event, this)" title="Ctrl+Click to follow link">https://www.amazon.in</label&gt;
+</body>
+</html>
+
+8. What are Custom arguments?
+A. JavaScript event allows to send any custom arguments, which is user defined data.
+     It can be any type of data:
+    a) Primitive
+    b) Non Primitive
+
+Syntax:
+        <button onclick="DetailsClick(1, 'TV', {rate:4.3}, ['Delhi', 'Hyd'])">
+
+        function DetailsClick(...product)
+        {
+        }
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <script>
+      function DetailsClick(obj, e, ...product){
+         var [id, name, rating] = product;
+         document.write(`
+               Button Id : ${obj.id} <br>
+               X Position: ${e.clientX} <br>
+               Product Id : ${id} <br>
+               Name : ${name} <br>
+               Rating : ${rating.rate}
+         `);
+      }
+   </script>
+</head>
+<body>
+   <button onclick="DetailsClick(this, event, 1, 'TV', {rate:4.5})" id="btnDetails">Details</button>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Day-13 Class
+------------
+JavaScript Events
+
+1. What is Event?
+     Observer
+2. What is Event Handler?
+3. What is Event Listener?
+4. What are Event Arguments?
+5. Default Event Arguments
+      this, event
+6. Custom Event Arguments
+
+Note: Event Listener can have only one default argument "event". However it provides
+      access to both event and element details.
+
+Syntax:
+     document.querySelector("button").addEventListener("click", (e)=>{
+       
+            // event details are accessible directly using event reference
+   
+              e.clientX, e.clientY, e.keyCode, e.ctrlKey..
+             
+               // element details are accessible by using "target" reference
+       
+              e.target.id, e.target.name, e.target.src, e.target.className ..
+
+     }
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <script>
+      function bodyload(){
+         document.getElementById("btnInsert").addEventListener("click", (e)=>{
+               console.log(`
+                   X Position : ${e.clientX} \n
+                   Ctrl Key  : ${e.ctrlKey} \n
+                   Button Id : ${e.target.id} \n
+                   Button Name: ${e.target.name}
+               `);
+         })
+      }
+   </script>
+</head>
+<body onload="bodyload()">
+   <button id="btnInsert" name="Insert">Insert</button>
+</body>
+</html>
+
+7. What is Event Bubbling?
+            (or)
+    What is Event Propagation?
+
+A. Event Bubbling or Propagation is a mechanism where the child event can simulate the parent. It leads to propagation of events in a parent child bubble.
+
+8. How to prevent propagation of events?
+A. By using event argument method "stopPropagation()".
+
+Syntax:
+        function onChildEvent(e) {
+   
+             e.stopPropagation();
+
+        }
+       
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      nav {
+         border: 1px solid black;
+         padding: 20px;
+      }
+   </style>
+   <script>
+      function NavClick(){
+         alert("Navbar Clicked");
+      }
+      function SearchClick(e){
+         e.stopPropagation();
+         alert("Search Clicked");
+      }
+   </script>
+</head>
+<body>
+   <nav onclick="NavClick()">
+       <h2>Navbar</h2>
+       <button onclick="SearchClick(event)">Search</button>
+   </nav>
+</body>
+</html>
+
+9. How to disable the default action of element?
+A. By using the event argument method "preventDefault()".
+
+Syntax:
+        function FormSubmit(e)
+        {
+            e.preventDefault();
+        }
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <script>
+      function FormSubmit(e){
+          e.preventDefault();
+          alert('Form Submitted to Server');
+      }
+   </script>
+</head>
+<body>
+    <form onsubmit="FormSubmit(event)">
+        User Name  : <input type="text" name="UserName"> <button>Submit</button>
+    </form>
+</body>
+</html>
+
+10. What are browser events?
+A.   All events of window object are used for elements, which are known as "Browser Events". 
+     They are classified into various groups
+
+        - Mouse Events
+        - Keyboard Events
+        - Button Events
+        - Clipboard Events
+        - Timer Events
+        - Touch Events
+        - Element State Events
+        - Form Events etc..
+
+                          React Events
+- React uses Virtual DOM.
+- React virtual DOM can't use the browser events.
+- React provides a library called "SyntheticEvents".
+- Synthetic Events are virtual DOM events that map to actual DOM.
+
+Syntax:
+    Developer writes synthetic event  "onClick" => It maps to actual event  "onclick"
+
+- SyntheticEvent  is the base for all events in React.
+- It handles all browser events using event map technique.
+- React SynthenticEvents includes
+   
+        Mouse Events
+        Keyboard Events
+        Clipboard Events
+        Button Events
+        Touch Events
+        Timer Events
+        Form Events etc..
+
+- React have support for various events but it can manage "Two-Way-Binding" only with "onChange".
+
+            <input type="text"  onChange={functionName} />
+            <select onChange={functionName}>
+
+- The delegate function can access element value by using default event argument.
+
+Syntax:
+         <input type="text"  onChange={GetName} />
+
+         function GetName(e)
+         {
+             e.target.value;    
+             e.keyCode;
+         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Day-14 Class
+-------------
+Note: To handle two-way binding every form element must be configured with      
+      "onChange". If onChange is not defined then React 18x version marks it as
+       "read-only".
+
+Ex:
+form-demo.jsx
+
+import { useState } from "react"
+
+export function FormDemo()
+{
+    const [product, setProduct] = useState({Name:'TV', Price:0, City:'Delhi', Stock:true});
+
+    function handleNameChange(e){
+        setProduct({
+            Name: e.target.value,
+            Price: product.Price,
+            City: product.City,
+            Stock: product.Stock
+        })
+    }
+    function handlePriceChange(e){
+        setProduct({
+            Name: product.Name,
+            Price: parseFloat(e.target.value),
+            City: product.City,
+            Stock: product.Stock
+        })
+    }
+    function handleCityName(e){
+        setProduct({
+            Name: product.Name,
+            Price: product.Price,
+            City: e.target.value,
+            Stock: product.Stock
+        })
+    }
+    function handleStockChange(e){
+        setProduct({
+            Name: product.Name,
+            Price: product.Price,
+            City: product.City,
+            Stock: e.target.checked
+        })
+    }
+
+    function handleSubmitClick(){
+        console.log(product);
+    }
+
+    return(
+        <div className="container-fluid">
+            <div>
+                <h3>Register Product</h3>
+                <dl>
+                    <dt>Product Name</dt>
+                    <dd><input type="text" value={product.Name} onChange={handleNameChange} /></dd>
+                    <dt>Price</dt>
+                    <dd><input type="number" value={product.Price} onChange={handlePriceChange} /></dd>
+                    <dt>City</dt>
+                    <dd>
+                        <select value={product.City} onChange={handleCityName}>
+                            <option>Select City</option>
+                            <option>Delhi</option>
+                            <option>Hyd</option>
+                        </select>
+                    </dd>
+                    <dt>Stock</dt>
+                    <dd><input type="checkbox" checked={product.Stock} onChange={handleStockChange} /> <label>Available</label> </dd>
+                </dl>
+                <button onClick={handleSubmitClick}>Submit</button>
+            </div>
+        </div>
+    )
+}
+
+Ex: Weather API
+
+1. Visit  
+    https://openweathermap.org/api
+
+2. Register a new account [free]
+
+3. Login with registered account and copy your API key and save in any text document.
+
+4. Go to Current Weather data in "API" category
+
+5. Select  "Built-in API request by City Name".
+
+https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
+
+Ex:
+weather.jsx
+
+import axios from "axios";
+import { useState } from "react";
+
+
+export function Weather(){
+
+
+    const url = 'https://api.openweathermap.org/data/2.5/weather'
+    const api_key = '5cde3b4aabae4ad29e2a6ad25a3f563e';
+
+    const [cityName, setCityName] = useState('');
+    const [weatherData, setWeatherData] = useState({name:'', main:{temp:0}, weather:[{description:''}]})
+
+    function handleCityChange(e){
+        setCityName(e.target.value);
+    }
+
+    function handleSearchClick(){
+
+        // axios.get(`url?q=${cityName}&appid=${api_key}`);
+
+        axios.get(url, {params:{
+             q: cityName,
+             appid: api_key,
+             units:'metric'
+        }})
+        .then(response=>{
+            setWeatherData(response.data);
+            console.log(response.data);
+        })
+    }
+
+    return(
+        <div className="container-fluid">
+            <div className="mt-4 d-flex justify-content-center">
+                <div className="w-50">
+                    <div className="input-group">
+                        <input type="text" onChange={handleCityChange} placeholder="Enter City Name" className="form-control" />
+                        <button onClick={handleSearchClick} className="bi bi-search btn btn-warning"></button>
+                    </div>
+                    <div className="mt-4">
+                        <h2>{weatherData.name} - {weatherData.weather[0].description.toUpperCase()} </h2>
+                        <p className="fs-4">{Math.round(weatherData.main.temp)} &deg; C <span className="bi bi-sun"></span> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+Events
+- Mouse Events
+- Keyboard Events
+- Button Events
+- Clipboard Events
+etc..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Day-15 Class
+------------
+Style Binding
+
+- It is a technique of configuring inline styles for JSX elements dynamically.
+- Styles in JSX are defined by using "style" property.
+- It is an object type with key & value reference.
+- Key is a style attribute defined in Camel Case.
+- Value is always a string.
+
+Syntax: HTML
+
+    <h2  style="color:red; background-color:yellow; border:1px solid black">
+
+Syntax: JSX
+   
+    <h2  style={ { color:'red', backgroundColor:'yellow', border:'1px solid black' } }>
+
+Ex:
+weather.jsx
+
+import axios from "axios";
+import { useState } from "react";
+
+
+export function Weather(){
+
+
+      const api_key = '5cde3b4aabae4ad29e2a6ad25a3f563e'
+    const url = 'https://api.openweathermap.org/data/2.5/weather'
+
+    
+    const [cityName, setCityName] = useState('');
+    const [weatherData, setWeatherData] = useState({name:'', main:{temp:0}, weather:[{description:''}]})
+
+    function handleCityChange(e){
+        setCityName(e.target.value);
+    }
+
+    function handleSearchClick(){
+
+        // axios.get(`url?q=${cityName}&appid=${api_key}`);
+
+        axios.get(url, {params:{
+             q: cityName,
+             appid: api_key,
+             units:'metric'
+        }})
+        .then(response=>{
+            setWeatherData(response.data);
+            console.log(response.data);
+        })
+    }
+
+    return(
+        <div className="container-fluid">
+            <div className="mt-4 d-flex justify-content-center">
+                <div className="w-50">
+                    <div className="input-group">
+                        <input type="text" onChange={handleCityChange} placeholder="Enter City Name" className="form-control" />
+                        <button onClick={handleSearchClick} className="bi bi-search btn btn-warning"></button>
+                    </div>
+                    <div style={{marginTop:'50px', boxShadow:'2px 2px 2px black', padding:'20px', border:'1px solid black', textAlign:'center'}}>
+                        <h2>{weatherData.name} - {weatherData.weather[0].description.toUpperCase()} </h2>
+                        <p className="fs-4">{Math.round(weatherData.main.temp)} &deg; C <span className="bi bi-sun"></span> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+Ex: Change Color
+
+import axios from "axios";
+import { useState } from "react";
+
+
+export function Weather(){
+
+
+    const url = 'https://api.openweathermap.org/data/2.5/weather&#39;;
+    const api_key = '1318ca6725c69160d346c41fc0612596';
+
+    const [cityName, setCityName] = useState('');
+    const [weatherData, setWeatherData] = useState({name:'', main:{temp:0}, weather:[{description:''}]});
+   
+
+    function handleCityChange(e){
+        setCityName(e.target.value);
+    }
+
+    function handleSearchClick(){
+
+        // axios.get(`url?q=${cityName}&appid=${api_key}`);
+
+        axios.get(url, {params:{
+             q: cityName,
+             appid: api_key,
+             units:'metric'
+        }})
+        .then(response=>{
+            setWeatherData(response.data);
+            console.log(response.data);
+        })
+    }
+
+    return(
+        <div className="container-fluid">
+            <div className="mt-4 d-flex justify-content-center">
+                <div className="w-50">
+                    <div className="input-group">
+                        <input type="text" onChange={handleCityChange} placeholder="Enter City Name" className="form-control" />
+                        <button onClick={handleSearchClick} className="bi bi-search btn btn-warning"></button>
+                    </div>
+                    <div style={{marginTop:'50px', boxShadow:'2px 2px 2px black', padding:'20px', border:'1px solid black', textAlign:'center', backgroundColor:`${(weatherData.weather[0].description==='mist')?'lightcyan':'#000044'}`, color:'white'}}>
+                        <h2>{weatherData.name} - {weatherData.weather[0].description.toUpperCase()} </h2>
+                        <p className="fs-4">{Math.round(weatherData.main.temp)} &deg; C <span className="bi bi-sun"></span> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+Ex: Change Image
+
+import axios from "axios";
+import { useState } from "react";
+
+
+export function Weather(){
+
+
+    const url = 'https://api.openweathermap.org/data/2.5/weather&#39;;
+    const api_key = '1318ca6725c69160d346c41fc0612596';
+
+    const [cityName, setCityName] = useState('');
+    const [weatherData, setWeatherData] = useState({name:'', main:{temp:0}, weather:[{description:''}]});
+   
+
+    function handleCityChange(e){
+        setCityName(e.target.value);
+    }
+
+    function handleSearchClick(){
+
+        // axios.get(`url?q=${cityName}&appid=${api_key}`);
+
+        axios.get(url, {params:{
+             q: cityName,
+             appid: api_key,
+             units:'metric'
+        }})
+        .then(response=>{
+            setWeatherData(response.data);
+            console.log(response.data);
+        })
+    }
+
+    return(
+        <div className="container-fluid">
+            <div className="mt-4 d-flex justify-content-center">
+                <div className="w-50">
+                    <div className="input-group">
+                        <input type="text" onChange={handleCityChange} placeholder="Enter City Name" className="form-control" />
+                        <button onClick={handleSearchClick} className="bi bi-search btn btn-warning"></button>
+                    </div>
+                    <div style={{marginTop:'50px', boxShadow:'2px 2px 2px black', padding:'20px', border:'1px solid black', textAlign:'center', backgroundImage:`url(${(weatherData.weather[0].description==='mist')?'mist.jpg':'smoke.jpg'})` , color:'white', backgroundSize:'cover'}}>
+                        <h2>{weatherData.name} - {weatherData.weather[0].description.toUpperCase()} </h2>
+                        <p className="fs-4">{Math.round(weatherData.main.temp)} &deg; C <span className="bi bi-sun"></span> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+                             Class Binding
+- It is a technique of binding CSS classes to JSX elements.
+- A CSS class comprises of set of styles defined by using a class name.
+- You can apply the class dynamically to JSX elements using "className" property.
+
+Syntax:
+     <h2 className='css_class_name'>
+     <h2 className={ (condition)?' ' : ' ' }>
+ 
+Ex:
+import { useState } from "react"
+
+
+export function ClassBinding(){
+
+
+    const [theme, setTheme] = useState('border border-2 p-4 rounded');
+    const [btnTheme, setbtnTheme] = useState('btn btn-dark w-100');
+
+    function handleThemeChange(e){
+        if(e.target.checked){
+            setTheme('border border-2 p-4 rounded bg-dark text-white');
+            setbtnTheme('btn btn-warning w-100');
+        } else {
+            setTheme('border border-2 p-4 rounded');
+            setbtnTheme('btn btn-dark w-100');
+        }
+    }
+
+    return(
+        <div className="container-fluid d-flex justify-content-center">
+            <div className="mt-4">
+                <form className={theme}>
+                    <div className="form-switch">
+                        <input type="checkbox" onChange={handleThemeChange} className="form-check-input" /> <label> Dark Theme </label>
+                    </div>
+                    <h3 className="bi bi-person-fill"> User Login </h3>
+                    <dl>
+                        <dt>User Name</dt>
+                        <dd><input type="text" className="form-control" /></dd>
+                        <dt>Password</dt>
+                        <dd><input type="password" className="form-control" /></dd>
+                    </dl>
+                    <button className={btnTheme}>Login</button>
+                </form>
+            </div>
+        </div>
+    )
+}
+
+
+
+
+
+Mouse Event Binding
+    onMouseOver
+    onMouseOut
+    onMouseDown
+    onMouseUp
+    onMouseMove
+
+Ex:
+1. Add a new JSON file in public folder
+
+        mobiles.json
+[
+    {
+        "img_src": "m1.jpg"
+    },
+    {
+        "img_src": "m2.jpg"
+    },
+    {
+        "img_src": "m3.jpg"
+    }
+   
+]
+
+2. Add component files
+     mouse-demo.css
+
+
+.col-1 img {
+    border: 2px solid gray;
+    padding: 5px;
+}
+.col-1 img:hover {
+    border : 2px solid blue;
+    cursor: grab;
+}
+
+    mouse-demo.jsx
+
+import axios from "axios";
+import { useEffect, useState } from "react";
+import './mouse-demo.css';
+
+
+export function MouseDemo(){
+
+    const [images, setImages] = useState([{img_src:''}]);
+    const [previewImage, setPreviewImage] = useState('m1.jpg');
+
+    useEffect(()=>{
+
+            axios.get('mobiles.json')
+            .then(response=>{
+                setImages(response.data);
+            })
+
+    },[])
+
+    function handleMouseOver(e){
+        setPreviewImage(e.target.src);
+    }
+
+    return(
+        <div className="container-fluid">
+            <div className="row">
+                <div className="col-1">
+                    {
+                        images.map(image=>
+                            <div key={image} className="my-4">
+                                <img onMouseOver={handleMouseOver} src={image.img_src}  width="100" height="100"/>
+                            </div>
+                        )
+                    }
+                </div>
+                <div className="col-11 ps-4 mt-4">
+                    <img height="400" src={previewImage} width="300" />
+                </div>
+            </div>
+        </div>
+    )
+}
+
+Ex: Mouse Animation
+
+mouse-animation.css
+
+
+@keyframes Spin {
+    from {
+        transform: rotate(0deg) scale(1);
+    }
+    to {
+        transform: rotate(360deg) scale(2);
+    }
+}
+.react-logo {
+    animation-name: Spin;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+mouse-animation.jsx
+
+import { useState } from 'react';
+import './mouse-animation.css';
+
+export function MouseAnimation(){
+
+    const [animationSpeed, setAnimationSpeed] = useState('5s');
+
+    function handleMouseOver(){
+        setAnimationSpeed('1s');
+    }
+    function handleMouseout(){
+        setAnimationSpeed('5s');
+    }
+
+    return(
+        <div className="container-fluid d-flex bg-dark justify-content-center align-items-center" style={{height:'100vh'}}>
+            <img onMouseDown={handleMouseOver} onMouseUp={handleMouseout} style={{animationDuration:animationSpeed}} className='react-logo' src='logo192.png' />
+        </div>
+    )
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Session -19
+-----------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+						
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
