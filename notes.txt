@@ -3677,6 +3677,237 @@ export function KeyDemo() {
 
 
 
+Session 20
+----------
+Mouse Events
+Keyword Events
+Button Events
+
+
+        Button Events
+    --------------------
+-onClick
+-onDoubleClick [ondblclick]
+-onContextMenu [right click]
+
+FAQ: How to disabled right click in page?
+Ans: You can disable any javascript event, by uisng a function that return false
+
+    <doby oncontextmenu="return false">
+    
+    </doby>
+
+    document.oncontextmenu=function(){
+        return false;
+    }
+
+Example:
+--------
+export function ButtonDemo() {
+    function handelDoubleClick() {
+        window.open('iphone-green.jpg', 'iphone', 'width=300 height=400')
+    }
+
+    function handelContextMenu() {
+        document.oncontextmenu = function () {
+            alert("Right Click Disable On This Page")
+            return false
+        }
+    }
+    return (
+        <div className="container-fluid" onContextMenu={handelContextMenu}>
+            <h2>Right Click Not Allowed</h2>
+            <img onDoubleClick={handelDoubleClick} src="iphone-green.jpg" width={100} height={100} />
+            <p>Double Click To View Large</p>
+        </div>
+    )
+}
+
+
+
+
+Element State Events:
+---------------------
+onChange
+onFocus
+onBlur
+
+Example
+-------
+import { useState } from "react"
+
+export function ButtonDemo() {
+    const [tip,setTip] = useState('');
+    const [userName,setUserName] = useState('')
+    function handelFocus(){
+        setTip('Name In Block Letters')
+    }
+    function handelBlur(){
+        setTip('');
+        setUserName(userName.toUpperCase())
+    }
+    function handelChange(e){
+        setUserName(e.target.value)
+    }
+    return (
+        <div className="container-fluid">
+            <h2>Register</h2>
+            <dl>
+                <dt>User Name</dt>
+                <dd><input type="text" value={userName} onFocus={handelFocus} onBlur={handelBlur} onChange={handelChange} /></dd>
+                <dd>{tip}</dd>
+            </dl>
+        </div>
+    )
+}
+
+
+
+-React "Two Way Binding" is handeld by uisng "onChange" event.
+-Blur defines actions to perform when element lost focus
+
+
+
+EMI Calcualtor
+--------------
+import { useState } from "react"
+
+export function EmiCalculator() {
+    const [principle, setPrinciple] = useState(100000);
+    const [years, setYears] = useState(1);
+    const [rate, setRate] = useState(10.45);
+    const [emi, setEmi] = useState(0)
+
+    function handelPrincipleChange(e) {
+        setPrinciple(e.target.value)
+    }
+
+    function handelYearChange(e) {
+        setYears(e.target.value)
+    }
+
+    function handelRateChange(e) {
+        setRate(e.target.value)
+    }
+
+    function handelCalcualteClick() {
+        var P = principle
+        var r = rate / 12 / 100;
+        var n = years * 12;
+        var EMI = P * r * (Math.pow(1 + r, n)) / Math.pow(1 + r, n) - 1;
+        setEmi(EMI)
+    }
+
+    return (
+        <div className="container-fluid bg-secondary p-5" style={{ height: '100vh' }}>
+            <div className="bg-light text-dark p-2">
+                <h4 className="text-center">Personal Loan EMI Calculator</h4>
+                <div className="p-4 m-4 border border-2 border-dark">
+                    <div className="row gap-8">
+                        <div className="col">
+                            <div className="d-flex align-items-center gap-1">
+                                <label style={{ whiteSpace: 'nowrap' }} className="fw-bold">Amount You Need &#8377;</label>
+                                <input onChange={handelPrincipleChange} type="text" value={principle} className="form-control" />
+                            </div>
+                        </div>
+                        <div className="col">
+                            <div className="d-flex gap-1 align-items-center">
+                                <label className="fw-bold">For</label>
+                                <input onChange={handelYearChange} type="text" value={years} className="form-control w-100" />
+                                <label className="fw-bold">Years</label>
+                            </div>
+                        </div>
+                        <div className="col">
+                            <div className="d-flex gap-1 align-items-center">
+                                <label className="fw-bold" style={{ whiteSpace: 'nowrap' }}>Interest Rate</label>
+                                <input onChange={handelRateChange} type="text" value={rate} className="form-control w-100" />
+                                <label className="fw-bold">%</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row my-4 gap-8">
+                        <div className="col">
+                            <input onChange={handelPrincipleChange} type="range" min={100000} max={500000} value={principle} className="form-range" />
+                            <span>&#8377; 1,00,000</span>
+                            <span className=" float-end">&#8377; 5,00,000</span>
+                        </div>
+                        <div className="col">
+                            <input onChange={handelYearChange} type="range" min={1} max={5} value={years} className="form-range" />
+                            <span>1</span>
+                            <span className="float-end">5</span>
+                        </div>
+                        <div className="col">
+                            <input onChange={handelRateChange} type="range" min={10.4} max={18.4} value={rate} className="form-range" />
+                            <span>10.45%</span>
+                            <span className="float-end">18.45%</span>
+                        </div>
+                    </div>
+                    <div className="row my-4">
+                        <div className="col text-end">
+                            <button onClick={handelCalcualteClick} className="btn btn-primary">Calculate</button>
+                        </div>
+                    </div>
+                    <div>
+                        <p className="fw-semibold">Your Monthly EMI is <span className="fw-bold text-primary fs-4">{Math.round(emi).toLocaleString('en-in',{style:'currency',currency:'INR'})}</span> For next {years*12} months</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+
+
+
+
+
+
+
+
+
+
+
+ClipBoard Events
+----------------
+-onCut
+-onCopy
+-onPaste
+
+-Clipboard is temporary memory of your PC
+-The content that you copy or cut is kept on clickpboard.
+-You can disable clipboard event with 'return false'.
+
+Ex:
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <dl>
+        <dt>Account Number</dt>
+        <dd>
+            <input type="text">
+        </dd>
+        <dt>Verify Account</dt>
+        <dd>
+            <input type="text" onpaste="return false">
+        </dd>
+    </dl>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
 
 
 

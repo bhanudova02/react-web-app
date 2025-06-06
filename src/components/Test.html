@@ -1,26 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script>
-        function verifyName(e) {
-            console.log(e.keyCode)
-            var username = "John";
-            var txtName = document.getElementById("txtName").value;
-            if (username === txtName) {
-                console.log("Valid")
-            } else (
-                console.log("Invalid")
-            )
-        }
-    </script>
 </head>
-
 <body>
-    <input type="text" id="txtName" onkeypress="verifyName(event)" />
+    <dl>
+        <dt>Account Number</dt>
+        <dd>
+            <input type="text">
+        </dd>
+        <dt>Verify Account</dt>
+        <dd>
+            <input type="text" onpaste="return false">
+        </dd>
+    </dl>
 </body>
-
 </html>
