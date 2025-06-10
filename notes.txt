@@ -3935,6 +3935,216 @@ Ex:
 
 
 
+Session 21 Class
+----------------
+
+                    Timer Events
+                -------------------
+setTimeOut()
+clearTimeout()
+setInterval()
+clearInterval()
+
+        
+setTimeout()
+-it is timer event used to handel 'debounce' in application.
+-bounce is a mechanism where every task is released into process
+ immediately from memory
+-debounce allows to lock the task in memory for a specificaiton duration.
+
+Syntax:
+------
+    setTime(function(){},interval);
+
+Example:
+--------
+import { useState } from "react"
+
+export function TimeOutDemo() {
+    const [msg, setMsg] = useState('')
+
+    function Msg1() {
+        setMsg('10% Volume')
+    }
+
+    function Msg2() {
+        setMsg('50% Volume')
+    }
+
+    function Msg3() {
+        setMsg('100% Volume')
+    }
+
+    function handelShowClick(){
+        setTimeout(Msg1,3000)
+        setTimeout(Msg2,6000)
+        setTimeout(Msg3,9000)
+    }
+
+    return (
+        <div className="container-fluid text-center">
+            <button className="my-4 btn btn-primary" onClick={handelShowClick}><span className="bi bi-volume-up"></span></button>
+            <p>{msg}</p>
+        </div>
+    )
+}
+
+
+
+
+
+-clearTimeout():
+----------------
+-it is used to clear the from memory before released into process
+-it requires a memory reference of task to clear from memory.
+
+Syntax:
+    clearTimeout(ref_name);
+
+                React 'useRef()' hook
+                ----------------------
+-React 18x version introduced a new hook 'useRef()'.
+-it is used to configure a reference memory, which is native to the process.
+-it allocated memory and stores data, so that it can be used by the process.
+-the data in reference memory is not  intended to present (UI). it is intented to 
+ use in the background process.
+
+Syntax:
+    let thred = useRef(null);
+
+    thred.current = value/function;
+
+    setTimeout(thred.current);
+
+Example:
+-------
+import { useRef, useState } from "react"
+
+export function TimeOutDemo() {
+    const [msg, setMsg] = useState('')
+    let thread = useRef(null)
+    function Msg1() {
+        setMsg('20% Volume')
+    }
+
+    function Msg2() {
+        setMsg('50% Volume')
+    }
+
+    function Msg3() {
+        setMsg('100% Volume')
+    }
+
+    function handelShowClick() {
+        setTimeout(Msg1, 3000)
+        thread.current = setTimeout(Msg2, 6000)
+        setTimeout(Msg3, 9000)
+    }
+
+    function handelCancelClick(){
+        clearTimeout(thread.current)
+    }
+
+    return (
+        <div className="container-fluid text-center">
+            <button className="my-4 btn btn-primary" onClick={handelShowClick}><span className="bi bi-volume-up"></span></button>
+            <button onClick={handelCancelClick} className="my-4 btn btn-danger bi bi-volume-mute"></button>
+            <p>{msg}</p>
+        </div>
+    )
+}
+
+
+
+
+
+
+setInterval() 
+-------------
+-it is used to handel 'throttle'
+-throttle is mechanism of excuteing specified task repeating
+ untila removed from memory.
+-it loads tasks into memory and releases a copy of task into process.
+
+Syntax:
+    setInterval(function(){},interval)
+
+-clearInterval()
+-it removes the task from memory, that is loaded
+ using interval setInterval()
+
+ Syntax:
+        clearInterval(ref_name);
+
+Example:
+--------
+import { useEffect, useRef, useState } from "react"
+
+export function TimeOutDemo() {
+    const [timer, setTimer] = useState()
+
+
+    function Clock() {
+        var now = new Date();
+        var time = now.toLocaleTimeString();
+        setTimer(time)
+    }
+
+
+
+    useEffect(() => {
+        setInterval(Clock, 1000)
+    }, [])
+
+    return (
+        <div className="container-fluid text-center">
+            <h1 className="mt-3">{timer}</h1>
+        </div>
+    )
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
